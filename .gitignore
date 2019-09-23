@@ -1,0 +1,10 @@
+**/*.rs.bk
+*~
+a.out
+list-test
+cmake_install.cmake
+CMakeFiles/
+CMakeCache.txt
+.idea/
+*.iml
+Makefile
