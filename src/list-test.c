@@ -9,12 +9,14 @@ void print_list(List head) {
 }
 
 int main() {
-  List head;
+  Node* head;
   init(&head);
 
   insert(&head, 1);
   insert(&head, 2);
   insert(&head, 3);
+
+  delete(&head, 2);
 
   print_list(head);
   

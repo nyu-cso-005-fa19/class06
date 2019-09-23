@@ -2,23 +2,15 @@
 
 
 int main() {
+  char buf[6];
+  char s[6] = "world";
+  int res = scanf("%5s", buf);
 
-  char s1[6] = "World";
-  char s[6];
-  scanf("%5s", s);
-  printf("%s\n", s);
-  printf("%s\n", s1);
-  
-  while (1) {
-    int x;
-    printf("Input: ");
-    int res = scanf("%d", &x);
-    if (res == 0) {
-      printf("Error: unexpected input\n");
-      return 1;
-    }
-    printf("x: %d\n\n", x);
+  if (res == 0) {
+    printf("Unexpected input\n");
+  } else { 
+    printf("buf: %s, s: %s\n", buf, s);
   }
-  
+
   return 0;
 }

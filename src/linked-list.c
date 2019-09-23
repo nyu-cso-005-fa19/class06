@@ -46,7 +46,7 @@ void insert(Node** head, int d) {
   *head = node;
 }
 
-int find(Node* head, int d, Node** pPrv, Node** pCur) {
+Node* find(Node* head, int d, Node** pPrv) {
   Node* prev = NULL;
   Node* curr = head;
   
@@ -56,10 +56,24 @@ int find(Node* head, int d, Node** pPrv, Node** pCur) {
   }
 
   *pPrv = prev;
-  *pCur = curr;
-  return curr != NULL;
+  return curr;
 }
 
+int delete(Node** head, int d) {
+  Node* prev;
+  Node* curr = find(*head, d, &prev);
 
+  if (curr == NULL) return 0;
+
+  if (prev != NULL) {
+    prev->next = curr->next;
+  } else {
+    *head = curr->next;
+  }
+
+  free(curr);
+
+  return 1;
+}
 
 

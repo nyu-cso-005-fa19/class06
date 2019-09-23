@@ -1,19 +1,17 @@
 #include <stdio.h>
 
-
 int main() {
 
-  char s1[6] = "World";
-  char s[7] = "Hello";
+  char buf[7];
 
   while (1) {
     printf("Input: ");
-    char* res = fgets(s, 7, stdin);
-    if (res != s) {
+    char* res = fgets(buf, 7, stdin);
+    if (res != buf) {
       printf("Error: unexpected input\n");
       return 1;
     }
-    printf("s: %s\n", s);
+    printf("buf: %s\n", buf);
   }
   
   return 0;
